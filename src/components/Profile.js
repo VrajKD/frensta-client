@@ -103,12 +103,12 @@ class Profile extends Component {
         let profileMarkup = !loading ? (authenticated ? (
             <Paper className={classes.paper}>
                 <div className={classes.imageWrapper}>
-                    <img src={imageURL} className={classes.image} />
+                    <img src={imageURL} className={classes.image} alt="Profile" />
                     <input type="file" hidden accept="image/png, image/jpeg" id="imageInput" onChange={this.onImageChange} />
-                    <EditButton className={classes.editButton} color="primary" variant="contained" onClick={this.onButtonClick} ><EditIcon color="white" /></EditButton>
+                    <EditButton className={classes.editButton} color="primary" variant="contained" onClick={this.onButtonClick} ><EditIcon /></EditButton>
                 </div>
                 <div className={classes.textWrapper}>
-                    <Typography variant="h5" ><Link to={`/user/${handle}`}>{handle}</Link></Typography>
+                    <Typography variant="h5" ><Link to={`/users/${handle}`}>{handle}</Link></Typography>
                     {bio && <div className={classes.text}>{bio}</div>}
                     {website && <div className={classes.text}><LinkOutlinedIcon color="primary" className={classes.icon} /><a href={website} rel=" noreferrer noopener " >{website}</a></div>}
                     {location && <div className={classes.text}><PinDropIcon color="secondary" className={classes.icon} />{location}</div>}

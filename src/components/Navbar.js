@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import Link from 'react-router-dom/Link'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 //?Material UI Stuff
@@ -9,9 +9,9 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
 import { Tooltip, IconButton } from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home';
-import AddIcon from '@material-ui/icons/Add';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import AddScream from './AddScream'
+import Notifications from './Notifications'
 
 const styles = {
     icons: {
@@ -29,15 +29,11 @@ class Navbar extends Component {
             <Fragment>
                 <AddScream />
                 <Tooltip title="Back home!" placement="bottom">
-                    <IconButton>
+                    <IconButton component={Link} to='/'>
                         <HomeIcon className={classes.icons} />
                     </IconButton>
                 </Tooltip>
-                <Tooltip title="Check notifications!" placement="bottom">
-                    <IconButton>
-                        <NotificationsNoneIcon className={classes.icons} />
-                    </IconButton>
-                </Tooltip>
+                <Notifications />
             </Fragment>
         ) : (
                 <Fragment>

@@ -41,7 +41,6 @@ class AddScream extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        console.log(Object.keys(this.props.UI.errors).length)
         if (!this.props.UI.loading && prevProps.UI.loading && !Object.keys(this.props.UI.errors).length) {
             this.setState({
                 body: '',

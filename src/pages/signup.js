@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import axios from 'axios'
+
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signUpUser } from '../redux/actions/userActions'

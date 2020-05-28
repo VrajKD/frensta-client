@@ -17,7 +17,7 @@ const styles = {
     delbtn: {
         position: "absolute",
         left: '80%',
-        top: '10%'
+        top: '2.5%'
     }
 }
 
