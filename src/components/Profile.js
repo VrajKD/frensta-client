@@ -14,6 +14,7 @@ import dayjs from 'dayjs'
 import EditIcon from '@material-ui/icons/Edit';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Tooltip from '@material-ui/core/Tooltip'
+import ProfileSkeleton from './ProfileSkeleton'
 
 import { uploadImage, logOutUser } from '../redux/actions/userActions'
 
@@ -77,6 +78,12 @@ const styles = {
         justifyContent: "space-evenly",
         marginTop: 15
     },
+    hr: {
+        border: 0,
+        height: "0.5px",
+        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0))",
+        margin: "20px 80px"
+    }
 }
 
 class Profile extends Component {
@@ -108,7 +115,8 @@ class Profile extends Component {
                     <EditButton className={classes.editButton} color="primary" variant="contained" onClick={this.onButtonClick} ><EditIcon /></EditButton>
                 </div>
                 <div className={classes.textWrapper}>
-                    <Typography variant="h5" ><Link to={`/users/${handle}`}>{handle}</Link></Typography>
+                    <Typography variant="h5" color="inherit"><Link to={`/users/${handle}`}>{handle}</Link></Typography>
+                    <hr className={classes.hr} />
                     {bio && <div className={classes.text}>{bio}</div>}
                     {website && <div className={classes.text}><LinkOutlinedIcon color="primary" className={classes.icon} /><a href={website} rel=" noreferrer noopener " >{website}</a></div>}
                     {location && <div className={classes.text}><PinDropIcon color="secondary" className={classes.icon} />{location}</div>}
@@ -120,18 +128,19 @@ class Profile extends Component {
                         <EditDetails />
                     </div>
                 </div>
-            </Paper>
+            </Paper >
         ) : (
                 <Paper className={classes.paper}>
                     <div className={classes.textWrapper}>
                         <Typography variant="h5" className={classes.text} >Welcome to Frensta</Typography>
                         <div className={classes.btnWrapper}>
-                            <Button variant="contained" size="large" color="primary"><Link to='/login'>Login</Link></Button>
-                            <Button variant="contained" size="large" color="secondary"><Link to='/signup'>Sign Up</Link></Button>
+                            <Button variant="contained" size="large" color="primary"><Link style={{ color: "white" }} to='/login'>Login</Link></Button>
+                            <Button variant="contained" size="large" color="secondary"><Link style={{ color: "white" }} to='/signup'>Sign Up</Link></Button>
                         </div>
                     </div>
-                </Paper>
-            )) : ("Profile Loading")
+                </Paper >
+            )) : (<ProfileSkeleton />
+            )
         return profileMarkup
     }
 }

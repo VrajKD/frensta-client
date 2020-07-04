@@ -126,7 +126,8 @@ class ScreamDialog extends Component {
                                 </Grid>
                                 <CommentInput screamId={screamId} />
                                 <CommentsList comments={comments} className={classes.commentsList} />
-                            </Fragment>) : (<CircularProgress />)}
+                            </Fragment>) : (
+                                <div style={{ textAlign: "center" }}><CircularProgress /></div>)}
                     </DialogContent>
                 </Dialog>
             </Fragment>

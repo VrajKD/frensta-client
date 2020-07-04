@@ -38,6 +38,12 @@ const styles = {
         marginRight: 10,
         paddingBottom: 2
     },
+    hr: {
+        border: 0,
+        height: "0.5px",
+        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0))",
+        margin: "20px 80px"
+    }
 }
 
 class StaticProfile extends Component {
@@ -52,6 +58,7 @@ class StaticProfile extends Component {
                 </div>
                 <div className={classes.textWrapper}>
                     <Typography variant="h5" ><Link to={`/users/${handle}`}>{handle}</Link></Typography>
+                    <hr className={classes.hr} />
                     {bio && <div className={classes.text}>{bio}</div>}
                     {website && <div className={classes.text}><LinkOutlinedIcon color="primary" className={classes.icon} /><a href={website} rel=" noreferrer noopener " >{website}</a></div>}
                     {location && <div className={classes.text}><PinDropIcon color="secondary" className={classes.icon} />{location}</div>}

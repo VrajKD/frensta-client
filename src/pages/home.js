@@ -4,6 +4,7 @@ import Scream from '../components/Scream'
 import Profile from '../components/Profile'
 import { getScreams } from '../redux/actions/dataActions'
 import { connect } from 'react-redux'
+import ScreamSkeleton from '../components/ScreamSkeleton'
 
 export class Home extends Component {
 
@@ -15,7 +16,7 @@ export class Home extends Component {
         const { screams, loading } = this.props.data
         let recentScreams = !loading ? (
             screams.map(scream => <Scream key={scream.screamId} scream={scream} />)
-        ) : "Loading..."
+        ) : (<ScreamSkeleton />)
         return (
             <Grid container spacing={2}>
                 <Grid item sm={8} xs={12} >

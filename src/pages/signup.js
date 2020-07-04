@@ -106,7 +106,7 @@ class Signup extends Component {
                                 <CircularProgress color="secondary" thickness={5.0} size={30} />
                             ) : "SIGN UP"}</Button>
                     </form>
-                    <p>Already have an account? Log in <Link to="/login"> here</Link> </p>
+                    <p>Already have an account? Log in <Link to="/login"><u> here</u></Link> </p>
                 </Grid>
                 <Grid item sm />
             </Grid >

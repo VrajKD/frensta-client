@@ -18,6 +18,8 @@ import Signup from './pages/signup'
 import User from './pages/user'
 import { SET_AUTHENTICATED } from './redux/types'
 
+axios.defaults.baseURL = "https://us-central1-frensta-67c67.cloudfunctions.net/api"
+
 const token = localStorage.FBIdToken;
 if (token) {
   const decodedToken = jwtDecode(token);

@@ -6,6 +6,8 @@ import StaticProfile from '../components/StaticProfile'
 
 import Grid from '@material-ui/core/Grid'
 import axios from 'axios'
+import ProfileSkeleton from '../components/ProfileSkeleton'
+import ScreamSkeleton from '../components/ScreamSkeleton'
 
 class User extends Component {
     state = {
@@ -30,7 +32,7 @@ class User extends Component {
     render() {
         const { screams, loading } = this.props.data
         const { screamIdParam } = this.state
-        let recentScreams = loading ? ("Profile Loading ...") :
+        let recentScreams = loading ? (<ScreamSkeleton />) :
             screams === null ? ("No screams to show!") :
                 !screamIdParam ?
                     screams.map((scream) => <Scream key={scream.screamId} scream={scream} />) : (
@@ -39,7 +41,7 @@ class User extends Component {
                             else return <Scream key={scream.screamId} scream={scream} openDialog />
                         })
                     );
-        let profMarkup = this.state.profile === null ? ("Loading") : (<StaticProfile profile={this.state.profile} />)
+        let profMarkup = this.state.profile === null ? (<ProfileSkeleton />) : (<StaticProfile profile={this.state.profile} />)
         return (
             <Grid container spacing={2}>
                 <Grid item sm={8} xs={12} >

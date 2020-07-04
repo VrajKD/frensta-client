@@ -37,9 +37,9 @@ class Navbar extends Component {
             </Fragment>
         ) : (
                 <Fragment>
-                    <Button color="inherit" component={Link} to="/login">Login</Button>
-                    <Button color="inherit" component={Link} to="/">Home</Button>
-                    <Button color="inherit" component={Link} to="/signup">Sign up</Button>
+                    <Button style={{ color: "white" }} color="action" component={Link} to="/login">Login</Button>
+                    <Button style={{ color: "white" }} color="inherit" component={Link} to="/">Home</Button>
+                    <Button style={{ color: "white" }} component={Link} to="/signup">Sign up</Button>
                 </Fragment>
             );
         return (
